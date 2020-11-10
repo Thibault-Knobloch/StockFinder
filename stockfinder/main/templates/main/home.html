@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>StockFinder</title>
+</head>
+<style>
+.filters {
+    background-color: rgb(26,26,26);
+    color: white;
+    padding: 20px;
+}
+
+.button_mine {
+    background: red;
+    color: white;
+    font-weight: bold;
+    margin-left: 44%;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 5px 20px;
+    box-shadow: 0px 0px 15px 1px #000000;
+    cursor: pointer;
+}
+.button_mine:hover {
+    padding: 5px 22px;
+    font-size: 20px;
+    margin-left: 43.8%;
+}
+
+</style>
+
+<body>
+    <img src="{% static 'main/images/image2.jpg' %}", width=100%>
+<form method="get">
+    {% csrf_token %}
+    <div class="filters">
+        <b><font size="+1,85">AVAILABLE FILTERS:</font></b>
+        <br>
+        <br>
+        <a>
+        <div class="row">
+            <div class="col-sm-6">
+                {{form3}}
+            </div>
+            <div class="col-sm-6">
+                {{form2}} in %
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                {{form4}} in $
+            </div>
+            <div class="col-sm-6">
+                {{form5}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                {{form}} in Bn. $
+            </div>
+        </div>
+        </a>
+        <br>
+        <c><button type="submit", class="button_mine" value="apply", name="apply">APPLY</button></c>
+
+    </div>
+    <br>
+    FILTERS SELECTED: Market Cap above: {{form10}}; Stock price below: {{form9}}
+    <br>
+    <br>
+    MATCHES: {{form11}}
+</form>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
